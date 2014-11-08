@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/AndroidBoilerplate.iml" filepath="$PROJECT_DIR$/AndroidBoilerplate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ParseUI/ParseUI.iml" filepath="$PROJECT_DIR$/ParseUI/ParseUI.iml" />
+      <module fileurl="file://$PROJECT_DIR$/application/application.iml" filepath="$PROJECT_DIR$/application/application.iml" />
+      <module fileurl="file://$PROJECT_DIR$/facebook/facebook.iml" filepath="$PROJECT_DIR$/facebook/facebook.iml" />
+    </modules>
+  </component>
+</project>
+

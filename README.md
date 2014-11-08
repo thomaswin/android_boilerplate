@@ -18,8 +18,8 @@ This README would normally document whatever steps are necessary to get your app
 
 
 #### Dependencies ####
-1. Facebook sdk
-2. Parse UI
+1. Facebook sdk (3.20.0)
+2. Parse UI + sdk (1.7.0)
 
 ### Contribution guidelines ###
 

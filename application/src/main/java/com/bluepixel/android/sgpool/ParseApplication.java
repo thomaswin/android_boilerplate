@@ -2,10 +2,8 @@ package com.bluepixel.android.sgpool;
 
 import android.app.Application;
 
-import com.parse.Parse;
-import com.parse.ParseACL;
-import com.parse.ParseFacebookUtils;
-import com.parse.ParseUser;
+import com.bluepixel.android.sgpool.ui.parse.ParseDevActivity;
+import com.parse.*;
 
 public class ParseApplication extends Application {
 
@@ -15,17 +13,10 @@ public class ParseApplication extends Application {
 
         // Add your initialization code here
 
-        Parse.enableLocalDatastore(this);
-        Parse.initialize(this, "gaQ350TScDWrA1914BBXPqku7xh09948DNEeIfy5", "oVR6clIwYykqw5wBMncEYtmmPmV9VU5t7N0B4V1E");
-        ParseFacebookUtils.initialize(getResources().getString(R.string.facebook_app_id));
+
+        Parse.initialize(this, "gxfnyMAVphd9HujbZS1Yeozn7LzkDSUTt0y0jI2B", "4pBWWLwC0sOHIYyjVK7d86PQ5o7Vdul4rhtQ3Qet");
+        PushService.setDefaultPushCallback(this, ParseDevActivity.class);
 
 
-        ParseUser.enableAutomaticUser();
-        ParseACL defaultACL = new ParseACL();
-
-        // If you would like all objects to be private by default, remove this line.
-        defaultACL.setPublicReadAccess(true);
-
-        ParseACL.setDefaultACL(defaultACL, true);
     }
 }

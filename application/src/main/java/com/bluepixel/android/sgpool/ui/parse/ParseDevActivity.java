@@ -62,6 +62,11 @@ public class ParseDevActivity extends Activity
             fragmentManager.beginTransaction()
                     .replace(R.id.container, ParseUserFragment.newInstance(position + 1))
                     .commit();
+        } else if (position == 2) {
+            FragmentManager fragmentManager = getFragmentManager();
+            fragmentManager.beginTransaction()
+                    .replace(R.id.container, FirebaseUserFragment.newInstance(position + 1))
+                    .commit();
         }
     }
 
@@ -71,10 +76,11 @@ public class ParseDevActivity extends Activity
                 mTitle = getString(R.string.title_installation);
                 break;
             case 2:
-                mTitle = getString(R.string.title_role);
+                mTitle = getString(R.string.title_user);
                 break;
             case 3:
-                mTitle = getString(R.string.title_user);
+                mTitle = "Firebase";
+
                 break;
         }
         Log.i(TAG, "section : " + number);

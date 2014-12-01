@@ -16,8 +16,6 @@
 
 package com.bluepixel.android.sgpool;
 
-import android.net.Uri;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.TimeZone;
@@ -28,17 +26,7 @@ public class Config {
     // Is this an internal dogfood build?
     public static final boolean IS_DOGFOOD_BUILD = false;
 
-    // Warning messages for dogfood build
-    public static final String DOGFOOD_BUILD_WARNING_TITLE = "Test build";
-    public static final String DOGFOOD_BUILD_WARNING_TEXT = "This is a test build.";
 
-    // Public data manifest URL
-    public static final String PROD_CONFERENCE_DATA_MANIFEST_URL = "";
-
-    // Manifest URL override for Debug (staging) builds:
-    public static final String MANIFEST_URL = PROD_CONFERENCE_DATA_MANIFEST_URL;
-
-    public static final String BOOTSTRAP_DATA_TIMESTAMP = "Thu, 10 Apr 2014 00:01:03 GMT";
 
     // Conference hashtag
     public static final String CONFERENCE_HASHTAG = "#io14";
@@ -79,43 +67,6 @@ public class Config {
 
 
 
-    // How long before a session we display "This session starts in N minutes." in the
-    // Session details page.
-    public static final long HINT_TIME_BEFORE_SESSION = 60 * MINUTE_MILLIS; // 60 min
-
-    // how long before the end of a session the user can give feedback
-    public static final long FEEDBACK_MILLIS_BEFORE_SESSION_END = 15 * MINUTE_MILLIS; // 15min
-
-    // Auto sync interval. Shouldn't be too small, or it might cause battery drain.
-    public static final long AUTO_SYNC_INTERVAL_LONG_BEFORE_CONFERENCE = 6 * HOUR_MILLIS;
-    public static final long AUTO_SYNC_INTERVAL_AROUND_CONFERENCE = 2 * HOUR_MILLIS;
-    public static final long AUTO_SYNC_INTERVAL_AFTER_CONFERENCE = 12 * HOUR_MILLIS;
-
-    // How many days before the conference we consider to be "around the conference date"
-    // for purposes of sync interval (at which point the AUTO_SYNC_INTERVAL_AROUND_CONFERENCE
-    // interval kicks in)
-    public static final long AUTO_SYNC_AROUND_CONFERENCE_THRESH = 3 * DAY_MILLIS;
-
-    // Minimum interval between two consecutive syncs. This is a safety mechanism to throttle
-    // syncs in case conference data gets updated too often or something else goes wrong that
-    // causes repeated syncs.
-    public static final long MIN_INTERVAL_BETWEEN_SYNCS = 10 * MINUTE_MILLIS;
-
-    // If data is not synced in this much time, we show the "data may be stale" warning
-    public static final long STALE_DATA_THRESHOLD_NOT_DURING_CONFERENCE = 2 * DAY_MILLIS;
-    public static final long STALE_DATA_THRESHOLD_DURING_CONFERENCE = 12 * HOUR_MILLIS;
-
-    // How long we snooze the stale data notification for after the user has acted on it
-    // (to keep from showing it repeatedly and being annoying)
-    public static final long STALE_DATA_WARNING_SNOOZE = 10 * MINUTE_MILLIS;
-
-    // Package name for the I/O Hunt game
-    public static final String IO_HUNT_PACKAGE_NAME = "com.google.wolff.androidhunt2";
-
-    // Play store URL prefix
-    public static final String PLAY_STORE_URL_PREFIX
-            = "https://play.google.com/store/apps/details?id=";
-
     // Known session tags that induce special behaviors
     public interface Tags {
         // tag that indicates a session is a live session
@@ -145,23 +96,6 @@ public class Config {
         Tags.CATEGORY_DISPLAY_ORDERS.put(Tags.CATEGORY_TOPIC, 1);
         Tags.CATEGORY_DISPLAY_ORDERS.put(Tags.CATEGORY_TYPE, 2);
     }
-
-    // Values for the EventPoint feedback API. Sync happens at the same time as schedule sync,
-    // and before that values are stored locally in the database.
-
-    public static final String FEEDBACK_API_CODE = "";
-    public static final String FEEDBACK_URL = "";
-    public static final String FEEDBACK_API_KEY = "";
-    public static final String FEEDBACK_DUMMY_REGISTRANT_ID = "";
-    public static final String FEEDBACK_SURVEY_ID = "";
-
-    // URL prefix for web links to session pages
-    public static final Uri SESSION_DETAIL_WEB_URL_PREFIX
-            = Uri.parse("https://www.google.com/events/io/schedule/session/");
-
-
-    // Profile URLs for simulated badge reads for the debug feature.
-    public static final String[] DEBUG_SIMULATED_BADGE_URLS = new String[] {};
 
     private static String piece(String s, char start, char end) {
         int startIndex = s.indexOf(start), endIndex = s.indexOf(end);

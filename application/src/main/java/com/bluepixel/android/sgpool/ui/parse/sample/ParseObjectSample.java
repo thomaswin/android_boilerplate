@@ -1,4 +1,4 @@
-package com.bluepixel.android.sgpool.ui.parse;
+package com.bluepixel.android.sgpool.ui.parse.sample;
 
 import com.parse.*;
 import org.json.JSONArray;

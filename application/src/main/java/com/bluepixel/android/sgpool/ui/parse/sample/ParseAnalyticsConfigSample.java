@@ -1,4 +1,4 @@
-package com.bluepixel.android.sgpool.ui.parse;
+package com.bluepixel.android.sgpool.ui.parse.sample;
 
 import android.content.Intent;
 import android.util.Log;

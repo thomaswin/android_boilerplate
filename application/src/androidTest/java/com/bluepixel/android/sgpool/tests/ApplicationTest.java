@@ -1,4 +1,4 @@
-package bluepixels.myapplication;
+package com.bluepixel.android.sgpool.tests;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
@@ -10,4 +10,17 @@ public class ApplicationTest extends ApplicationTestCase<Application> {
     public ApplicationTest() {
         super(Application.class);
     }
+
+    @Override
+    protected void tearDown() throws Exception {
+        super.tearDown();
+    }
+
+    @Override
+    protected void setUp() throws Exception {
+        super.setUp();
+    }
+
+
+
 }

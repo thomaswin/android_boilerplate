@@ -1,8 +1,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
       xmlns:tools="http://schemas.android.com/tools"
-      tools:context="com.bluepixel.android.sgpool.ui.ObservableScrollviewActivity">
-    <item android:id="@+id/action_settings"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      tools:context="com.bluepixel.android.sgpool.ui.MainPageActivity">
+
+    <item android:id="@+id/action_clear"
           android:title="@string/action_clear"
           android:orderInCategory="100"
-          android:showAsAction="never"/>
+          app:showAsAction="never"/>
 </menu>

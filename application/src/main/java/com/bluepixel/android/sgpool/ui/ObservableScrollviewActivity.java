@@ -6,7 +6,6 @@ import android.os.Handler;
 import android.view.*;
 import android.widget.ImageView;
 import com.bluepixel.android.sgpool.R;
-import com.bluepixel.android.sgpool.common.Log;
 import com.bluepixel.android.sgpool.ui.widget.CheckableFrameLayout;
 import com.bluepixel.android.sgpool.ui.widget.ObservableScrollView;
 import com.bluepixel.android.sgpool.util.UIUtils;
@@ -88,11 +87,8 @@ public class ObservableScrollviewActivity extends Activity implements Observable
 
     @Override
     public void onScrollChanged(int deltaX, int deltaY) {
-        Log.v("Scroll", "DeltaX: " + deltaX + " DeltaY: " + deltaY);
 
         int scrollY = mScrollView.getScrollY();
-        Log.v("Scroll", "Scroll : " + scrollY);
-
         float newTop = Math.max(mPhotoHeightPixels, scrollY);
 //        mAddScheduleButton.setTranslationY(newTop
 //                - mAddScheduleButtonHeightPixels / 2);

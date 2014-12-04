@@ -1,4 +1,4 @@
-package com.bluepixel.android.sgpool.ui.parse;
+package com.bluepixel.android.sgpool.ui;
 
 
 import android.app.ActionBar;
@@ -92,15 +92,16 @@ public class NavigationDrawerFragment extends Fragment {
                 selectItem(position);
             }
         });
+
+        String[] sections = getResources().getStringArray(R.array.page_section);
+
         mDrawerListView.setAdapter(new ArrayAdapter<String>(
                 getActionBar().getThemedContext(),
                 android.R.layout.simple_list_item_activated_1,
                 android.R.id.text1,
-                new String[]{
-                        getString(R.string.title_installation),
-                        getString(R.string.title_role),
-                        getString(R.string.title_user),
-                }));
+                sections
+                ));
+
         mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
         return mDrawerListView;
     }
@@ -273,5 +274,7 @@ public class NavigationDrawerFragment extends Fragment {
          * Called when an item in the navigation drawer is selected.
          */
         void onNavigationDrawerItemSelected(int position);
+
+        void onSectionAttached(int number);
     }
 }

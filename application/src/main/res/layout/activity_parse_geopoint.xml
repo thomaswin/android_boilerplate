@@ -6,11 +6,14 @@
                 android:paddingRight="@dimen/activity_horizontal_margin"
                 android:paddingTop="@dimen/activity_vertical_margin"
                 android:paddingBottom="@dimen/activity_vertical_margin"
-                tools:context="com.bluepixel.android.sgpool.ui.ObservableScrollviewActivity">
+                tools:context="com.bluepixel.android.sgpool.ui.parse.ParseGeopointActivity">
 
-    <TextView
-        android:text="Hello world"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+
+    <fragment
+        android:id="@+id/map"
+        class="com.google.android.gms.maps.MapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
 
 </RelativeLayout>

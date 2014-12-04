@@ -19,7 +19,7 @@
  *
  */
 
-package com.bluepixel.android.sgpool.ui;
+package com.bluepixel.android.sgpool.ui.parse;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -30,7 +30,6 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.bluepixel.android.sgpool.R;
 import com.facebook.FacebookRequestError;
 import com.facebook.Request;
@@ -40,7 +39,6 @@ import com.facebook.model.GraphUser;
 import com.parse.ParseFacebookUtils;
 import com.parse.ParseUser;
 import com.parse.ui.ParseLoginBuilder;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -51,7 +49,7 @@ import java.util.List;
  * Shows the user profile. This simple activity can function regardless of whether the user
  * is currently logged in.
  */
-public class SampleProfileActivity extends Activity {
+public class ParseLoginSampleActivity extends Activity {
     private static final int LOGIN_REQUEST = 0;
 
     private TextView titleTextView;
@@ -64,8 +62,10 @@ public class SampleProfileActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_profile);
+
+        // this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+
         titleTextView = (TextView) findViewById(R.id.profile_title);
         emailTextView = (TextView) findViewById(R.id.profile_email);
         nameTextView = (TextView) findViewById(R.id.profile_name);
@@ -83,11 +83,11 @@ public class SampleProfileActivity extends Activity {
                 } else {
                     // User clicked to log in.
                     ParseLoginBuilder loginBuilder = new ParseLoginBuilder(
-                        SampleProfileActivity.this);
+                        ParseLoginSampleActivity.this);
 
 
                     ParseLoginBuilder builder = new ParseLoginBuilder(
-                        SampleProfileActivity.this);
+                        ParseLoginSampleActivity.this);
                     Intent parseLoginIntent = builder.setParseLoginEnabled(true)
                         .setParseLoginButtonText("Go")
                         .setParseSignupButtonText("Register")
@@ -124,11 +124,6 @@ public class SampleProfileActivity extends Activity {
         currentUser = ParseUser.getCurrentUser();
         if (currentUser != null) {
             showProfileLoggedIn();
-
-//            Intent intent = new Intent(this, MyActivity.class);
-//            startActivity(intent);
-            // getFriendList();
-            testFacebook();
         } else {
             showProfileLoggedOut();
         }
@@ -237,7 +232,7 @@ public class SampleProfileActivity extends Activity {
 
         Session fbSession = ParseFacebookUtils.getSession();
         if (fbSession == null) {
-            Toast.makeText(SampleProfileActivity.this, "Session null", Toast.LENGTH_SHORT).show();
+            Toast.makeText(ParseLoginSampleActivity.this, "Session null", Toast.LENGTH_SHORT).show();
             return;
         }
 

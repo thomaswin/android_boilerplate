@@ -1,6 +1,6 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <style name="ParseLoginUI" />
+    <style name="ParseLoginUI"/>
 
     <style name="ParseLoginUI.Button" parent="@android:style/Widget.Button">
         <item name="android:layout_width">match_parent</item>

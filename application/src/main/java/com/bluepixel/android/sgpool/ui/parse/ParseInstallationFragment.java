@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 import com.bluepixel.android.sgpool.R;
 import com.bluepixel.android.sgpool.common.Log;
+import com.bluepixel.android.sgpool.ui.NavigationDrawerFragment;
 import com.parse.ParseException;
 import com.parse.ParseInstallation;
 import com.parse.ParsePush;
@@ -49,7 +50,7 @@ public class ParseInstallationFragment extends Fragment {
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
-        ((ParseDevActivity) activity).onSectionAttached(
+        ((NavigationDrawerFragment.NavigationDrawerCallbacks) activity).onSectionAttached(
                 getArguments().getInt(ARG_SECTION_NUMBER));
     }
 

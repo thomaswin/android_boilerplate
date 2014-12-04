@@ -1,4 +1,4 @@
-package com.bluepixel.android.sgpool.ui.parse;
+package com.bluepixel.android.sgpool.ui.firebase;
 
 import android.app.Activity;
 import android.app.Fragment;
@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import com.bluepixel.android.sgpool.R;
 import com.bluepixel.android.sgpool.common.Log;
+import com.bluepixel.android.sgpool.ui.NavigationDrawerFragment;
 import com.bluepixel.android.sgpool.util.LogUtils;
 import com.firebase.client.AuthData;
 import com.firebase.client.Firebase;
@@ -58,7 +59,8 @@ public class FirebaseUserFragment extends Fragment implements View.OnClickListen
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
-        ((ParseDevActivity) activity).onSectionAttached(
+
+        ((NavigationDrawerFragment.NavigationDrawerCallbacks) activity).onSectionAttached(
                 getArguments().getInt(ARG_SECTION_NUMBER));
 
         setupListener();

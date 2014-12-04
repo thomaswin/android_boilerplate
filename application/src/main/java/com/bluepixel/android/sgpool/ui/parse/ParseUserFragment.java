@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 import com.bluepixel.android.sgpool.R;
 import com.bluepixel.android.sgpool.common.Log;
+import com.bluepixel.android.sgpool.ui.NavigationDrawerFragment;
 import com.bluepixel.android.sgpool.util.LogUtils;
 import com.parse.*;
 
@@ -50,8 +51,10 @@ public class ParseUserFragment extends Fragment {
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
-        ((ParseDevActivity) activity).onSectionAttached(
+
+        ((NavigationDrawerFragment.NavigationDrawerCallbacks) activity).onSectionAttached(
                 getArguments().getInt(ARG_SECTION_NUMBER));
+
     }
 
 

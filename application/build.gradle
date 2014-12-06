@@ -13,20 +13,13 @@ android {
     }
     buildTypes {
         release {
-            runProguard false
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
 
 
-    android {
 
-        packagingOptions {
-            exclude 'META-INF/LICENSE'
-            exclude 'META-INF/LICENSE-FIREBASE.txt'
-            exclude 'META-INF/NOTICE'
-        }
-    }
 }
 
 dependencies {
@@ -50,6 +43,18 @@ dependencies {
 
     compile 'com.firebase:firebase-client-android:2.0.2+'
     compile 'com.firebase:geofire:1.0.0+'
+    compile 'com.etsy.android.grid:library:1.0.5'
 
 
+
+
+    //androidTestCompile 'junit:junit:4.10'
+}
+android {
+
+    packagingOptions {
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE-FIREBASE.txt'
+        exclude 'META-INF/NOTICE'
+    }
 }
